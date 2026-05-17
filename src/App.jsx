@@ -3,7 +3,7 @@ import AdminLogin from "./pages/AdminLogin";
 import Dashboard from "./pages/Dashboard";
 import Users from "./pages/Users";
 import ProtectedRoute from "./components/ProtectedRoute";
-
+import Products from "./pages/Products";
 function App() {
   return (
     <BrowserRouter>
@@ -24,6 +24,14 @@ function App() {
           }
         />
 
+<Route
+  path="/products"
+  element={
+    <ProtectedRoute>
+      <Products />
+    </ProtectedRoute>
+  }
+/>
         {/* Protected users page */}
         <Route
           path="/users"
